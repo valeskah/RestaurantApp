@@ -1,0 +1,28 @@
+﻿<h1>@ViewBag.Title</h1>
+
+
+<p><a asp-controller="Restaurant" asp-action="Add">Add Restaurant</a></p>
+@if (ViewBag.restaurants.Count == 0)
+{
+    <p>No Restaurants Yet</p>
+}
+
+
+
+@if (ViewBag.restaurants.Count != 0)
+{
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Notes</th>
+    </tr>
+
+    @foreach (KeyValuePair<string, string> restaurant in ViewBag.restaurants)
+    {
+        <tr>
+            <td>@restaurant.Key</td>
+            <td>@restaurant.Value</td>
+        </tr>
+    }
+    </table>
+}
