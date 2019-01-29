@@ -32,3 +32,4 @@ C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\Resta
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\RestaurantApp.pdb
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\RestaurantApp.csproj.CopyComplete
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\Add.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\Remove.g.cshtml.cs

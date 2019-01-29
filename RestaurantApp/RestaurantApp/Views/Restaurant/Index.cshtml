@@ -17,11 +17,11 @@
         <th>Notes</th>
     </tr>
 
-    @foreach (KeyValuePair<string, string> restaurant in ViewBag.restaurants)
+    @foreach (var restaurant in ViewBag.restaurants)
     {
         <tr>
-            <td>@restaurant.Key</td>
-            <td>@restaurant.Value</td>
+            <td>@restaurant.Name</td>
+            <td>@restaurant.Notes</td>
         </tr>
     }
     </table>
