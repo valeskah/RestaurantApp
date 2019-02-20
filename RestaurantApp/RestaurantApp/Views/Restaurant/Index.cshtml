@@ -1,28 +1,38 @@
-﻿<h1>@ViewBag.Title</h1>
+﻿@using RestaurantApp.Models
+@model List<Restaurant>
+
+<h1>@ViewBag.Title</h1>
 
 
 <p><a asp-controller="Restaurant" asp-action="Add">Add Restaurant</a></p>
-@if (ViewBag.restaurants.Count == 0)
+<p><a asp-controller="Category">Filter by Categories</a></p>
+
+@if (Model.Count == 0)
 {
     <p>No Restaurants Yet</p>
 }
 
 
 
-@if (ViewBag.restaurants.Count != 0)
+@if (Model.Count != 0)
 {
     <table>
-    <tr>
-        <th>Name</th>
-        <th>Notes</th>
-    </tr>
-
-    @foreach (var restaurant in ViewBag.restaurants)
-    {
         <tr>
-            <td>@restaurant.Name</td>
-            <td>@restaurant.Notes</td>
+            <th>Name</th>
+            <th>Notes</th>
+            <th>Type</th>
         </tr>
-    }
+
+        @foreach (var restaurant in Model)
+        {
+            <tr>
+                <td>@restaurant.Name</td>
+                <td>@restaurant.Notes</td>
+                <td>@restaurant.Category</td>
+            </tr>
+        }
     </table>
+
+<p><a asp-controller="Restaurant" asp-action="Remove">Remove a Restaurant</a></p>
 }
+

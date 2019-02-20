@@ -7,15 +7,12 @@ namespace RestaurantApp.Models
 {
     public class Restaurant
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Notes { get; set; }
-        public int RestaurantId { get; set; }
-        private static int nextId = 1;
 
-        public Restaurant()
-        {
-            RestaurantId = nextId;
-            nextId++;
-        }
+        public int CategoryID { get; set; } //foreign key
+        public RestaurantCategory Category { get; set; } 
+        
     }
 }

@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RestaurantApp.Models;
+using System.Collections.Generic;
+using RestaurantApp.ViewModels;
+using RestaurantApp.Data;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,37 +12,61 @@ namespace RestaurantApp.Controllers
 {
     public class RestaurantController : Controller
     {
+        private RestaurantDbContext context;
+
+        public RestaurantController(RestaurantDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
         
         // GET: /<controller>/
         public IActionResult Index()
         {
 
-            ViewBag.restaurants = RestaurantData.GetAll();
+            List<Restaurant> restaurants = context.Restaurants.ToList();
 
-            return View();
+            return View(restaurants);
         }
 
         public IActionResult Add()
         {
-            return View();
+            AddRestaurantViewModel addRestaurantViewModel = new AddRestaurantViewModel(context.Categories.ToList());
+            return View(addRestaurantViewModel);
         }
 
 
         [HttpPost]
-        [Route("/Restaurant/Add")]
-        public IActionResult NewRestaurant(Restaurant newRestaurant) //correspond with name values in form -- name values have to match properties of class
+        public IActionResult Add(AddRestaurantViewModel addRestaurantViewModel) 
         {
+            RestaurantCategory newRestaurantCategory = context.Categories.Single(c => c.ID == addRestaurantViewModel.CategoryID);
 
-            //Add new restaurant to restaurant list
-            RestaurantData.Add(newRestaurant);
+            if (ModelState.IsValid)
+            {
+               
+                Restaurant newRestaurant = new Restaurant
+                {
+                    Name = addRestaurantViewModel.Name,
+                    Notes = addRestaurantViewModel.Notes,
+                    Category = newRestaurantCategory
+                };
+
+
+                context.Restaurants.Add(newRestaurant);
+                context.SaveChanges();
+
+                return Redirect("/Restaurant");
+            }
+
+            return View(addRestaurantViewModel);
+
             
-            return Redirect("/Restaurant");
         }
 
         public IActionResult Remove()
         {
             ViewBag.title = "Remove Restaurants";
-            ViewBag.restaurants = RestaurantData.GetAll();
+            ViewBag.restaurants = context.Restaurants.ToList();
             return View();
         }
 
@@ -50,9 +75,12 @@ namespace RestaurantApp.Controllers
         {
             foreach (int restaurantId in restaurantIds)
             {
-                RestaurantData.Remove(restaurantId);
+                Restaurant theRestaurant = context.Restaurants.Single(c => c.ID == restaurantId);
+                context.Restaurants.Remove(theRestaurant);
+                
             }
-            
+
+            context.SaveChanges();
             return Redirect("/");
         }
     }

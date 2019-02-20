@@ -1,14 +1,23 @@
-﻿<h1>Add Restaurant</h1>
-<form method="post">
+﻿@model RestaurantApp.ViewModels.AddRestaurantViewModel
+
+
+<h1>Add Restaurant</h1>
+<form asp-controller="Restaurant" asp-action="Add" method="post">
+    
     <table>
 
         <tr>
-            <td>Name</td>
-            <td><input name="name" type="text" /></td>
+            <td><label asp-for="Name"></label></td>
+            <td><input name="name" type="text" asp-for="Name"/></td>
+            <td><span asp-validation-for="Name"></span></td>
         </tr>
         <tr>
-            <td>Notes (optional)</td>
-            <td><input name="notes" type="text" /></td>
+            <td><label asp-for="Notes">Notes (optional)</label></td>
+            <td><input name="notes" type="text" asp-for="Notes" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="CategoryID"></label></td>
+            <td><select asp-for="CategoryID" asp-items="Model.Categories"></select></td>
         </tr>
     </table>
     <input type="submit" value="Add Restaurant" />
