@@ -24,7 +24,7 @@ namespace RestaurantApp.Controllers
         public IActionResult Index()
         {
 
-            List<Restaurant> restaurants = context.Restaurants.ToList();
+            List<Restaurant> restaurants = context.Restaurants.Include(c => c.Category).ToList();
 
             return View(restaurants);
         }
@@ -82,6 +82,42 @@ namespace RestaurantApp.Controllers
 
             context.SaveChanges();
             return Redirect("/");
+        }
+
+        public IActionResult Edit()
+        {
+            List<Restaurant> restaurants = context.Restaurants.Include(c => c.Category).ToList();
+            return View(restaurants);
+        }
+
+        public IActionResult EditRestaurant(int ID)
+        {
+            Restaurant restaurantToEdit = context.Restaurants.First(c => c.ID == ID);
+            EditRestaurantViewModel editRestaurantViewModel = new EditRestaurantViewModel(context.Categories.ToList());
+
+
+            editRestaurantViewModel.Name = restaurantToEdit.Name;
+            editRestaurantViewModel.CategoryID = restaurantToEdit.CategoryID;
+            editRestaurantViewModel.Notes = restaurantToEdit.Notes;
+            editRestaurantViewModel.ID = restaurantToEdit.ID;
+            return View(editRestaurantViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult EditRestaurant(EditRestaurantViewModel editRestaurantViewModel)
+        {
+            int ID = editRestaurantViewModel.ID;
+            Restaurant updatedRestaurant = context.Restaurants.First(c => c.ID == ID);
+
+            updatedRestaurant.Name = editRestaurantViewModel.Name;
+            updatedRestaurant.CategoryID = editRestaurantViewModel.CategoryID;
+            updatedRestaurant.Notes = editRestaurantViewModel.Notes;
+
+            context.Restaurants.Update(updatedRestaurant);
+            context.SaveChanges();
+
+            return Redirect("/Restaurant");
+       
         }
     }
 }

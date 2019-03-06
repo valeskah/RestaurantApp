@@ -10,11 +10,11 @@ namespace RestaurantApp.ViewModels
 {
     public class AddRestaurantViewModel
     {
-        public string Notes { get; set; }
-
         [Required]
         [Display(Name = "Restaurant Name")]
         public string Name { get; set; }
+
+        public string Notes { get; set; }
 
         [Required]
         [Display(Name = "Category")]

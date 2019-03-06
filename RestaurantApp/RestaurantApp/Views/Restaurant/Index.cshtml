@@ -1,11 +1,11 @@
-﻿@using RestaurantApp.Models
-@model List<Restaurant>
+﻿@model List<RestaurantApp.Models.Restaurant>
 
 <h1>@ViewBag.Title</h1>
 
 
 <p><a asp-controller="Restaurant" asp-action="Add">Add Restaurant</a></p>
 <p><a asp-controller="Category">Filter by Categories</a></p>
+<p><a asp-controller="Restaurant"asp-action="Edit">Edit Restaurants</a></p>
 
 @if (Model.Count == 0)
 {
@@ -28,7 +28,7 @@
             <tr>
                 <td>@restaurant.Name</td>
                 <td>@restaurant.Notes</td>
-                <td>@restaurant.Category</td>
+                <td>@restaurant.Category.Name</td>
             </tr>
         }
     </table>

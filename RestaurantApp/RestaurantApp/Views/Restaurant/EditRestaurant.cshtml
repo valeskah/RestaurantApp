@@ -1,0 +1,22 @@
+﻿@model RestaurantApp.ViewModels.EditRestaurantViewModel
+
+<h1>Edit @Model.Name</h1>
+
+<form asp-controller="Restaurant" asp-action="EditRestaurant" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input name="name" type="text" asp-for="Name" /></td>
+            <td><span asp-validation-for="Name"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Notes">Notes (optional)</label></td>
+            <td><input name="notes" type="text" asp-for="Notes" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="CategoryID">Category</label></td>
+            <td><select asp-for="CategoryID" asp-items="Model.Categories"></select></td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" />
+</form>
