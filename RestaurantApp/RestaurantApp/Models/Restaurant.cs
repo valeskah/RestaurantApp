@@ -12,7 +12,10 @@ namespace RestaurantApp.Models
         public RestaurantCategory Category { get; set; }
         public int ID { get; set; }
         public int CategoryID { get; set; } //foreign key
-         
+        public Status.CompletionStatus RestaurantStatus { get; set; }
+            
+            
+            
         
     }
 }

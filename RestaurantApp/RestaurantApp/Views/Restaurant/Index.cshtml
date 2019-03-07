@@ -21,6 +21,7 @@
             <th>Name</th>
             <th>Notes</th>
             <th>Type</th>
+            <th>Status</th>
         </tr>
 
         @foreach (var restaurant in Model)
@@ -29,6 +30,7 @@
                 <td>@restaurant.Name</td>
                 <td>@restaurant.Notes</td>
                 <td>@restaurant.Category.Name</td>
+                <td>@restaurant.RestaurantStatus</td>
             </tr>
         }
     </table>

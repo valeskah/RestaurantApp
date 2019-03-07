@@ -43,12 +43,14 @@ namespace RestaurantApp.Controllers
 
             if (ModelState.IsValid)
             {
-               
+
                 Restaurant newRestaurant = new Restaurant
                 {
                     Name = addRestaurantViewModel.Name,
                     Notes = addRestaurantViewModel.Notes,
-                    Category = newRestaurantCategory
+                    Category = newRestaurantCategory,
+                    RestaurantStatus = addRestaurantViewModel.RestaurantStatus
+                    
                 };
 
 

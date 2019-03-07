@@ -30,6 +30,8 @@ namespace RestaurantApp.Migrations
 
                     b.Property<string>("Notes");
 
+                    b.Property<int>("RestaurantStatus");
+
                     b.HasKey("ID");
 
                     b.HasIndex("CategoryID");

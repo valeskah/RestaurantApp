@@ -22,9 +22,10 @@ namespace RestaurantApp.ViewModels
 
         public List<SelectListItem> Categories { get; set; }
 
+        public Status.CompletionStatus RestaurantStatus = Status.CompletionStatus.Incomplete;
+
         public AddRestaurantViewModel()
         {
-
         }
 
         public AddRestaurantViewModel(IEnumerable<RestaurantCategory> categories) {
