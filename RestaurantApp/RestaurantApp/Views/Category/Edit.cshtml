@@ -1,0 +1,12 @@
+﻿@model List<RestaurantApp.Models.RestaurantCategory>
+
+<h1>Select a Category to Edit</h1>
+<table>
+    @foreach (var category in Model)
+    {   
+        <tr>
+            <td><a asp-controller="Category" asp-action="EditCategory" asp-route-ID="@category.ID">@category.Name</a></td>
+        </tr>
+    }
+    
+</table>

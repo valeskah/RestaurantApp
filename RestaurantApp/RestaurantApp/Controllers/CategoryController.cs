@@ -72,5 +72,38 @@ namespace RestaurantApp.Controllers
             context.SaveChanges();
             return Redirect("/category");
         }
+
+        public IActionResult Edit()
+        {
+            List<RestaurantCategory> categories = context.Categories.ToList();
+            return View(categories);
+        }
+
+        public IActionResult EditCategory(int ID)
+        {
+            RestaurantCategory categoryToEdit = context.Categories.First(c => c.ID == ID);
+            EditCategoryViewModel editCategoryViewModel = new EditCategoryViewModel()
+            {
+                Name = categoryToEdit.Name,
+                ID = categoryToEdit.ID
+            };
+            return View(editCategoryViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult EditCategory(EditCategoryViewModel editCategoryViewModel)
+        {
+            int ID = editCategoryViewModel.ID;
+            RestaurantCategory updatedCategory = context.Categories.First(c => c.ID == ID);
+
+            updatedCategory.Name = editCategoryViewModel.Name;
+            updatedCategory.ID = editCategoryViewModel.ID;
+
+            context.Categories.Update(updatedCategory);
+            context.SaveChanges();
+
+            return Redirect("/category");
+
+        }
     }
 }

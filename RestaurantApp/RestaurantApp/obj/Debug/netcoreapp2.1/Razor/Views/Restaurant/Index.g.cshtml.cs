@@ -71,7 +71,7 @@ Write(ViewBag.Title);
             WriteLiteral("</h1>\r\n\r\n<p>");
             EndContext();
             BeginContext(78, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d57761d8e3f54d25aa466077dbdf40b0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6dd057dd7c974101bdefafd27a263a72", async() => {
                 BeginContext(126, 16, true);
                 WriteLiteral("Edit Restaurants");
                 EndContext();
@@ -121,7 +121,7 @@ Write(ViewBag.Title);
             WriteLiteral("    ");
             EndContext();
             BeginContext(250, 494, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41067ce3d9f84bc4a85d988a1ddc1974", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9b3d98144c7641efa459b6bd91945cba", async() => {
                 BeginContext(321, 16, true);
                 WriteLiteral("\r\n        <ul>\r\n");
                 EndContext();
@@ -216,7 +216,7 @@ WriteAttributeValue("", 551, restaurant.ID, 551, 14, false);
             WriteLiteral("<p>");
             EndContext();
             BeginContext(751, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "238beaff7ef94c9fa79932b35924a8c1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d729a0cbaae47e4b1f928307d0e7091", async() => {
                 BeginContext(799, 14, true);
                 WriteLiteral("Add Restaurant");
                 EndContext();
@@ -240,7 +240,7 @@ WriteAttributeValue("", 551, restaurant.ID, 551, 14, false);
             WriteLiteral("</p>\r\n<p>");
             EndContext();
             BeginContext(826, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e197fc5f917c47dc92530693c8ed19e8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7524f4e72c3b4582bfec27f0d35c7f8f", async() => {
                 BeginContext(877, 19, true);
                 WriteLiteral("Remove a Restaurant");
                 EndContext();

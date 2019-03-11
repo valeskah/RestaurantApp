@@ -1,0 +1,14 @@
+﻿@model RestaurantApp.ViewModels.EditCategoryViewModel
+
+<h1>Edit @Model.Name</h1>
+
+<form asp-controller="Category" asp-action="EditCategory" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input name="name" type="text" asp-for="Name" /></td>
+            <td><span asp-validation-for="Name"></span></td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" />
+</form>
