@@ -56,7 +56,7 @@ using RestaurantApp.Models;
             WriteLiteral("\r\n<h2>Categories</h2>\r\n<p>");
             EndContext();
             BeginContext(80, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47fd9150fdc6417888cece851010ec92", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63df56d46d9d49e9be3e95a675d8674e", async() => {
                 BeginContext(126, 12, true);
                 WriteLiteral("Add Category");
                 EndContext();
@@ -107,7 +107,7 @@ using RestaurantApp.Models;
             WriteLiteral("</ul>\r\n<p>");
             EndContext();
             BeginContext(249, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "024c1cc681854de5bbb57b84ff0bfba0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a837a36d1f2540fcad92e85f63455953", async() => {
                 BeginContext(298, 17, true);
                 WriteLiteral("Remove a Category");
                 EndContext();
