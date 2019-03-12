@@ -2,7 +2,9 @@
 
 <h1>@ViewBag.Title</h1>
 
-<p><a asp-controller="Restaurant"asp-action="Edit">Edit Restaurants</a>    <a asp-controller="Restaurant" asp-action="ViewCompleted">View Completed Taste Tests</a>
+<p><a asp-controller="Restaurant"asp-action="Edit">Edit Restaurants</a>    |    
+   <a asp-controller="Restaurant" asp-action="ViewCompleted">View Completed Taste Tests</a>    |    
+   <a asp-controller="Restaurant" asp-action="FilterBy">Filter by category</a>
 
 @if (Model.Count == 0)
 {

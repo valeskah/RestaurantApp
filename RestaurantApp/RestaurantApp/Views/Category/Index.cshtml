@@ -3,9 +3,10 @@
 <table>
     <tr>
         <td><h1>Categories</h1></td>
-        <td><h5><a asp-controlled="Category" asp-action="Edit">Edit</a></h5></td>
+        <td><h5><a asp-controller="Category" asp-action="Edit">Edit</a></h5></td>
     </tr>
 </table>
+
 <ul>
     @foreach (var category in Model)
     {

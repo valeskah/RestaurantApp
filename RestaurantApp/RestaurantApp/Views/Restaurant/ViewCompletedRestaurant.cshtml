@@ -2,7 +2,10 @@
 
 <h1>@Model.Name</h1>
 <p>@Model.Status</p>
+<p>@Model.Rating</p>
+<p>@Model.Notes</p>
 
 
 
-<a asp-controller="Restaurant" asp-action="EditCompleted" asp-route-id="@Model.ID">Edit Completion Status</a>
+<a asp-controller="Restaurant" asp-action="EditCompleted" asp-route-id="@Model.ID">Change Completion Status</a>
+<a asp-controller="Restaurant" asp-action="EditRating" asp-route-id="@Model.ID">Edit rating & notes</a>

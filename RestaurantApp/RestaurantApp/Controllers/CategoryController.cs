@@ -16,6 +16,7 @@ namespace RestaurantApp.Controllers
         public IActionResult Index()
         {
             List<RestaurantCategory> categories = context.Categories.ToList();
+            categories = categories.OrderBy(n => n.Name).ToList();
             return View(categories);
         }
 
@@ -76,6 +77,7 @@ namespace RestaurantApp.Controllers
         public IActionResult Edit()
         {
             List<RestaurantCategory> categories = context.Categories.ToList();
+            categories = categories.OrderBy(n => n.Name).ToList();
             return View(categories);
         }
 

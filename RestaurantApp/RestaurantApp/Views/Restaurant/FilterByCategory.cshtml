@@ -1,0 +1,10 @@
+﻿@model List<RestaurantApp.Models.Restaurant>
+
+<h1>Restaurants</h1>
+<ul>
+    @foreach (Restaurant restaurant in Model)
+    { 
+            <li><a asp-controller="Restaurant" asp-action="ViewRestaurant" asp-route-ID="@restaurant.ID">@restaurant.Name</a></li>
+        
+    }
+</ul>

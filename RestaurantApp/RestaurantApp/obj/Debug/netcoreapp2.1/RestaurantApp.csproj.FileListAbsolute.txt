@@ -44,3 +44,6 @@ C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\Resta
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\ViewCompletedRestaurant.g.cshtml.cs
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\ViewRestaurant.g.cshtml.cs
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\EditCompleted.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\EditRating.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\FilterBy.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\FilterByCategory.g.cshtml.cs

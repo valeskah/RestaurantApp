@@ -1,0 +1,20 @@
+﻿@model RestaurantApp.ViewModels.EditRatingViewModel
+
+<h1>Change your review for @Model.Name</h1>
+
+<form asp-controller="Restaurant" asp-action="EditRating" asp-route-id="@Model.ID" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="Rating">Rating: </label></td>
+            <td>
+                <select asp-for="Rating">
+                    <option>Good</option>
+                    <option>Bad</option>
+                </select>
+            </td>
+            <td><label asp-for="Notes">Notes: </label></td>
+            <td><input type="text" asp-for="Notes" value="@Model.Notes" /></td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" />
+</form> 

@@ -17,5 +17,7 @@ namespace RestaurantApp.ViewModels
         public string Rating { get; set; }
 
         public int ID { get; set; }
+
+        public string Notes { get; set; }
     }
 }

@@ -143,7 +143,7 @@ namespace RestaurantApp.Controllers
             ratedRestaurant.Notes = rateRestaurantViewModel.Notes;
             ratedRestaurant.RestaurantStatus = Status.CompletionStatus.Complete;
 
-            context.Restaurants.Update(ratedRestaurant);;
+            context.Restaurants.Update(ratedRestaurant); ;
 
             context.Restaurants.Update(ratedRestaurant);
             context.SaveChanges();
@@ -183,14 +183,15 @@ namespace RestaurantApp.Controllers
                 Name = restaurantToView.Name,
                 Status = restaurantToView.RestaurantStatus,
                 Rating = restaurantToView.Rating,
-                ID = restaurantToView.ID
+                ID = restaurantToView.ID,
+                Notes = restaurantToView.Notes
             };
 
             return View(viewCompletedViewModel);
 
         }
 
-        
+
 
         public IActionResult EditCompleted(int ID)
         {
@@ -224,6 +225,68 @@ namespace RestaurantApp.Controllers
             context.SaveChanges();
 
             return Redirect("/Restaurant");
+        }
+
+        public IActionResult EditRating(int ID)
+        {
+            Restaurant ratingToEdit = context.Restaurants.First(c => c.ID == ID);
+            EditRatingViewModel editRatingViewModel = new EditRatingViewModel()
+            {
+                Name = ratingToEdit.Name,
+                ID = ratingToEdit.ID,
+                Notes = ratingToEdit.Notes
+            };
+
+            return View(editRatingViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult EditRating(EditRatingViewModel editRatingViewModel)
+        {
+            int ID = editRatingViewModel.ID;
+            Restaurant updatedRating = context.Restaurants.First(c => c.ID == ID);
+
+            updatedRating.Notes = editRatingViewModel.Notes;
+            updatedRating.Rating = editRatingViewModel.Rating;
+
+            context.Restaurants.Update(updatedRating);
+            context.SaveChanges();
+
+            return Redirect("/Restaurant");
+        }
+
+
+        public IActionResult FilterBy()
+        {
+            List<RestaurantCategory> categories = context.Categories.ToList();
+            categories = categories.OrderBy(n => n.Name).ToList();
+            return View(categories);
+        }
+        
+        [HttpPost]
+        public IActionResult FilterByCategory(string[] categoryNames)
+        {
+            List<Restaurant> restaurants = context.Restaurants.Include(c => c.Category).ToList();
+            List<Restaurant> filteredRestaurants = new List<Restaurant>();
+
+            foreach(string category in categoryNames)
+            {
+                foreach(Restaurant restaurant in restaurants)
+                {
+                    if (restaurant.RestaurantStatus == Status.CompletionStatus.Incomplete)
+                    {
+                        string restaurantCategory = restaurant.Category.Name.ToString();
+
+                        if (category == restaurantCategory)
+                        {
+                            filteredRestaurants.Add(restaurant);
+                        }
+                    }
+                }
+
+            }
+
+            return View(filteredRestaurants);
         }
     }  
 }

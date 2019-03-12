@@ -27,10 +27,6 @@
             {
                 <li><a asp-controller="Restaurant" asp-action="ViewCompletedRestaurant" asp-route-id="@restaurant.ID">@restaurant.Name</a></li>
             }
-            else
-            {
-                <li><label for="@restaurant.ID"><a asp-controller="Restaurant" asp-action="ViewCompletedRestaurant" asp-route-id="@restaurant.ID">@restaurant.Name</a></label> </li>
-            }
         }
     }
 </ul>

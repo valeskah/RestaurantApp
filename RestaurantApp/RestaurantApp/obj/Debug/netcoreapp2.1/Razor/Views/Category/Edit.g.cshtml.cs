@@ -64,7 +64,7 @@ using RestaurantApp.Models;
             WriteLiteral("        <tr>\r\n            <td>");
             EndContext();
             BeginContext(179, 101, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95bed542515845aa92886c39f1f10cc8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "755818fb573a4afc93d3bcd6a8fca03d", async() => {
                 BeginContext(263, 13, false);
 #line 8 "C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\Views\Category\Edit.cshtml"
                                                                                               Write(category.Name);

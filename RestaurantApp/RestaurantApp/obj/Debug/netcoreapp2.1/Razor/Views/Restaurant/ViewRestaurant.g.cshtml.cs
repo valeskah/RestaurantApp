@@ -69,7 +69,7 @@ using RestaurantApp.Models;
             WriteLiteral("</h1></td>\r\n        <td><h5>");
             EndContext();
             BeginContext(133, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e09c40a43ce44ce4803ad90e08b46490", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "812a3dc746f54f05823d04e0add5037b", async() => {
                 BeginContext(217, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -126,7 +126,7 @@ using RestaurantApp.Models;
             WriteLiteral("</td>\r\n    </tr>\r\n    <tr>\r\n        <td>Status: </td>\r\n        <td>Incomplete</td>\r\n    </tr>\r\n</table>\r\n");
             EndContext();
             BeginContext(495, 166, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56fd4ed1468342e596e02bb69854a32b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9dbb64f27e66437e82d18dc102a2ff05", async() => {
                 BeginContext(590, 22, true);
                 WriteLiteral("\r\n<input type=\"submit\"");
                 EndContext();

@@ -1,0 +1,13 @@
+﻿@model List<RestaurantApp.Models.RestaurantCategory>
+
+<h1>Filter by...</h1>
+
+<form asp-controller="Restaurant" asp-action="FilterByCategory" method="post">
+    @foreach (var category in Model)
+    {
+        <input type="checkbox" name="categoryNames" id="@category.Name" value="@category.Name" />
+        <label for="@category.Name">@category.Name</label>
+        <br />
+    }
+    <input type="submit" value="View Restaurants" />
+</form>
