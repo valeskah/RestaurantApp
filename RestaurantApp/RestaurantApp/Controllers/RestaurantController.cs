@@ -124,10 +124,6 @@ namespace RestaurantApp.Controllers
         public IActionResult Complete(int ID)
         {
             Restaurant restaurantToComplete = context.Restaurants.First(c => c.ID == ID);
-            restaurantToComplete.RestaurantStatus = Status.CompletionStatus.Complete;
-
-            context.Restaurants.Update(restaurantToComplete);
-            context.SaveChanges();
 
             RateRestaurantViewModel rateRestaurantViewModel = new RateRestaurantViewModel();
 
@@ -145,6 +141,9 @@ namespace RestaurantApp.Controllers
 
             ratedRestaurant.Rating = rateRestaurantViewModel.Rating;
             ratedRestaurant.Notes = rateRestaurantViewModel.Notes;
+            ratedRestaurant.RestaurantStatus = Status.CompletionStatus.Complete;
+
+            context.Restaurants.Update(ratedRestaurant);;
 
             context.Restaurants.Update(ratedRestaurant);
             context.SaveChanges();
@@ -152,6 +151,79 @@ namespace RestaurantApp.Controllers
             return Redirect("/Restaurant");
         }
 
+        public IActionResult ViewRestaurant(int ID)
+        {
+            Restaurant restaurantToView = context.Restaurants.First(c => c.ID == ID);
+            int CategoryID = restaurantToView.CategoryID;
+            RestaurantCategory CategoryName = context.Categories.First(c => c.ID == CategoryID);
+            string Category = CategoryName.Name;
+
+            ViewRestaurantViewModel viewRestaurantViewModel = new ViewRestaurantViewModel()
+            {
+                Name = restaurantToView.Name,
+                ID = restaurantToView.ID,
+                Category = Category,
+                Notes = restaurantToView.Notes
+            };
+
+            return View(viewRestaurantViewModel);
+        }
+
+        public IActionResult ViewCompleted()
+        {
+            List<Restaurant> restaurants = context.Restaurants.Include(c => c.Category).ToList();
+            return View(restaurants);
+        }
+
+        public IActionResult ViewCompletedRestaurant(int ID)
+        {
+            Restaurant restaurantToView = context.Restaurants.First(c => c.ID == ID);
+            ViewCompletedViewModel viewCompletedViewModel = new ViewCompletedViewModel()
+            {
+                Name = restaurantToView.Name,
+                Status = restaurantToView.RestaurantStatus,
+                Rating = restaurantToView.Rating,
+                ID = restaurantToView.ID
+            };
+
+            return View(viewCompletedViewModel);
+
+        }
+
         
+
+        public IActionResult EditCompleted(int ID)
+        {
+            Restaurant completedToEdit = context.Restaurants.First(c => c.ID == ID);
+            EditCompletedViewModel editCompletedViewModel = new EditCompletedViewModel()
+            {
+                Name = completedToEdit.Name,
+                ID = completedToEdit.ID
+            };
+
+            return View(editCompletedViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult EditCompleted(EditCompletedViewModel editCompletedViewModel)
+        {
+            int ID = editCompletedViewModel.ID;
+            Restaurant updatedRestaurant = context.Restaurants.First(c => c.ID == ID);
+
+            if (editCompletedViewModel.Status == "Complete")
+            {
+                updatedRestaurant.RestaurantStatus = Status.CompletionStatus.Complete;
+            }
+
+            else
+            {
+                updatedRestaurant.RestaurantStatus = Status.CompletionStatus.Incomplete;
+            }
+
+            context.Restaurants.Update(updatedRestaurant);
+            context.SaveChanges();
+
+            return Redirect("/Restaurant");
+        }
     }  
 }

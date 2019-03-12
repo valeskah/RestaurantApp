@@ -1,0 +1,16 @@
+﻿@model RestaurantApp.ViewModels.EditCompletedViewModel
+
+<h1>Edit @Model.Name</h1>
+
+<form asp-controller="Restaurant" asp-action="EditCompleted" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="Status">Completion Status: </label></td>
+            <td><select asp-for="Status" >
+                    <option>Complete</option>
+                    <option>Incomplete</option>
+                </select></td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" />
+</form>

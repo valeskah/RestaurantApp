@@ -1,0 +1,23 @@
+﻿@model RestaurantApp.ViewModels.ViewRestaurantViewModel
+
+<table>
+    <tr>
+        <td><h1>@Model.Name</h1></td>
+        <td><h5><a asp-controller="Restaurant" asp-action="EditRestaurant" asp-route-id="@Model.ID">Edit</a></h5></td>
+    </tr>
+    <tr>
+        <td>Category:</td>
+        <td>@Model.Category</td>
+    </tr>
+    <tr>
+        <td>Notes:</td>
+        <td>@Model.Notes</td>
+    </tr>
+    <tr>
+        <td>Status: </td>
+        <td>Incomplete</td>
+    </tr>
+</table>
+<form asp-controller="Restaurant" asp-action="Complete" asp-route-id="@Model.ID" method="post">
+<input type="submit" value="Mark @Model.Name as Complete" />
+</form>

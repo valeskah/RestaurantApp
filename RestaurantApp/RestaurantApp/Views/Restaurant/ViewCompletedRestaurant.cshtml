@@ -1,0 +1,8 @@
+﻿@model RestaurantApp.ViewModels.ViewCompletedViewModel
+
+<h1>@Model.Name</h1>
+<p>@Model.Status</p>
+
+
+
+<a asp-controller="Restaurant" asp-action="EditCompleted" asp-route-id="@Model.ID">Edit Completion Status</a>

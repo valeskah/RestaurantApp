@@ -1,0 +1,36 @@
+﻿@model List<RestaurantApp.Models.Restaurant>
+
+<h1>Completed Taste Tests</h1>
+<p>Click Restaurant to view or edit Taste Test info</p>
+
+<h2>Good Rated Restaurants</h2>
+<ul>
+@foreach (var restaurant in Model)
+{
+    if (restaurant.RestaurantStatus == Status.CompletionStatus.Complete)
+    {
+        if (restaurant.Rating == "Good")
+        {
+            <li><a asp-controller="Restaurant" asp-action="ViewCompletedRestaurant" asp-route-id="@restaurant.ID">@restaurant.Name</a></li>
+        }
+    }
+}
+</ul>
+
+<h2>Bad Rated Restaurants</h2>
+<ul>
+    @foreach (var restaurant in Model)
+    {
+        if (restaurant.RestaurantStatus == Status.CompletionStatus.Complete)
+        {
+            if (restaurant.Rating == "Bad")
+            {
+                <li><a asp-controller="Restaurant" asp-action="ViewCompletedRestaurant" asp-route-id="@restaurant.ID">@restaurant.Name</a></li>
+            }
+            else
+            {
+                <li><label for="@restaurant.ID"><a asp-controller="Restaurant" asp-action="ViewCompletedRestaurant" asp-route-id="@restaurant.ID">@restaurant.Name</a></label> </li>
+            }
+        }
+    }
+</ul>

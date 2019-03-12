@@ -40,3 +40,7 @@ C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\Resta
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\Complete.g.cshtml.cs
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\Edit.g.cshtml.cs
 C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\EditCategory.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\ViewCompleted.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\ViewCompletedRestaurant.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\ViewRestaurant.g.cshtml.cs
+C:\Users\vjhal\OneDrive\Desktop\Restaurant App\RestaurantApp\RestaurantApp\RestaurantApp\obj\Debug\netcoreapp2.1\Razor\Views\Restaurant\EditCompleted.g.cshtml.cs
